@@ -57,7 +57,7 @@ const Login = () => {
                     <button type="submit" className='text-white mt-3 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center'>Kirish</button>
                 </form>
             </div>
-            <p className="mt-3 text-gray-500">Sizga markaz tomonidan berilgan login va parolni kiriting!</p>
+            <p className="mt-3 text-gray-500 sm:p-[0_20px]">Sizga markaz tomonidan berilgan login va parolni kiriting!</p>
         </div>
     );
 };
