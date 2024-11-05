@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate
+import { useNavigate } from 'react-router-dom';
 import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
 import image from '../assets/image';
 
@@ -7,22 +7,16 @@ const Login = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState(null);
-    const navigate = useNavigate(); // Initialize navigate
+    const navigate = useNavigate();
 
     const handleLogin = async (e) => {
         e.preventDefault();
         const auth = getAuth();
 
         try {
-            // Sign in using Firebase Authentication with email (username) and password
             await signInWithEmailAndPassword(auth, username, password);
-            console.log("User logged in:", username);
-            alert("Login successful!");
-            
-            // Redirect to the user dashboard
-            navigate('/user-dashboard'); // Adjusted to match the route in App.js
+            navigate('/user-dashboard');
         } catch (error) {
-            console.error("Error logging in:", error);
             setError("Login failed. Please check your username and password.");
         }
     };
