@@ -12,15 +12,19 @@ const UserDashboard = () => {
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, async (user) => {
             if (user) {
+                console.log("User UID:", user.uid); // UID-ni tekshirish
+
                 const docRef = doc(db, 'users', user.uid);
                 const docSnap = await getDoc(docRef);
 
                 if (docSnap.exists()) {
+                    console.log("Foydalanuvchi ma'lumotlari:", docSnap.data()); // Ma'lumotlarni tekshirish
                     setUserData(docSnap.data());
                 } else {
-                    console.log('Foydalanuvchi hujjati topilmadi!');
+                    console.log('Foydalanuvchi hujjati topilmadi!'); // Hujjat topilmasa
                 }
             } else {
+                console.log('Foydalanuvchi tizimga kirmagan, login sahifasiga yo‘naltirilmoqda');
                 navigate('/login');
             }
             setLoading(false);
@@ -42,13 +46,13 @@ const UserDashboard = () => {
 
     return (
         <div className="user-dashboard">
-            <h1>Welcome, {userData?.firstName} {userData?.lastName}</h1>
-            <p><strong>Field of Study:</strong> {userData?.fieldOfStudy}</p>
-            <p><strong>Diploma Number:</strong> {userData?.diplomaNumber}</p>
-            <p><strong>Certificate Number:</strong> {userData?.certificateNumber}</p>
-            <p><strong>Start Date:</strong> {userData?.startDate}</p>
-            <p><strong>End Date:</strong> {userData?.endDate}</p>
-            <button onClick={handleLogout}>Logout</button>
+            <h1>Xush kelibsiz, {userData?.firstName} {userData?.lastName}</h1>
+            <p><strong>O'quv sohasi:</strong> {userData?.fieldOfStudy}</p>
+            <p><strong>Diplom raqami:</strong> {userData?.diplomaNumber}</p>
+            <p><strong>Sertifikat raqami:</strong> {userData?.certificateNumber}</p>
+            <p><strong>Boshlanish sanasi:</strong> {userData?.startDate}</p>
+            <p><strong>Tugash sanasi:</strong> {userData?.endDate}</p>
+            <button onClick={handleLogout}>Chiqish</button>
         </div>
     );
 };
