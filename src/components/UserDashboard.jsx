@@ -12,19 +12,16 @@ const UserDashboard = () => {
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, async (user) => {
             if (user) {
-                console.log("User UID:", user.uid); // UID-ni tekshirish
-
                 const docRef = doc(db, 'users', user.uid);
                 const docSnap = await getDoc(docRef);
 
                 if (docSnap.exists()) {
-                    console.log("Foydalanuvchi ma'lumotlari:", docSnap.data()); // Ma'lumotlarni tekshirish
                     setUserData(docSnap.data());
                 } else {
-                    console.log('Foydalanuvchi hujjati topilmadi!'); // Hujjat topilmasa
+                    alert('Foydalanuvchi hujjati topilmadi!');
                 }
             } else {
-                console.log('Foydalanuvchi tizimga kirmagan, login sahifasiga yo‘naltirilmoqda');
+                alert('Foydalanuvchi tizimga kirmagan, login sahifasiga yo‘naltirilmoqda');
                 navigate('/login');
             }
             setLoading(false);
