@@ -64,7 +64,7 @@ const UserDashboard = () => {
                             <div className='w-full flex flex-col items-start sm:items-center sm:text-center'>
                                 <div>
                                     <span className='text-lg font-normal text-gray-500'>Xush kelibsiz,</span>
-                                    <h1 className='text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-2xl'>{userData?.firstName} {userData?.lastName}</h1>
+                                    <h1 className='text-4xl mb-6 font-extrabold leading-none tracking-tight text-gray-900 md:text-2xl'>{userData?.firstName} {userData?.lastName}</h1>
                                 </div>
                                 <div className='w-full flex items-start gap-4'>
                                     <div className='w-full p-4 bg-gray-200 rounded'>
