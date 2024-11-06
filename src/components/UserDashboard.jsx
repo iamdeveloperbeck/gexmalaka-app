@@ -59,7 +59,7 @@ const UserDashboard = () => {
                     <div className='container'>
                         <div className='w-full flex items-start gap-5 sm:flex-col sm:items-center'>
                             <div className='flex items-center gap-5'>
-                                <div className='w-[200px] h-[200px] bg-slate-400 flex items-center justify-center sm:h-[150px] sm:w-[150px] sm:rounded-full'>No Image</div>
+                                <div className='w-[200px] h-[200px] bg-slate-400 flex items-center justify-center sm:h-[150px] sm:w-[150px] sm:rounded-full'>Rasm mavjud emas!</div>
                             </div>
                             <div className='w-full flex flex-col items-start sm:items-center sm:text-center'>
                                 <div>
@@ -68,11 +68,11 @@ const UserDashboard = () => {
                                 </div>
                                 <div className='w-full flex items-start gap-4'>
                                     <div className='w-full p-4 bg-gray-200 rounded'>
-                                        <p><strong>O'quv sohasi:</strong> {userData?.fieldOfStudy}</p>
+                                        <p><strong>Malaka oshirgan yo'nalishi:</strong> {userData?.fieldOfStudy}</p>
                                         <p><strong>Diplom raqami:</strong> {userData?.diplomaNumber}</p>
                                         <p><strong>Sertifikat raqami:</strong> {userData?.certificateNumber}</p>
-                                        <p><strong>Boshlanish sanasi:</strong> {userData?.startDate}</p>
-                                        <p><strong>Tugash sanasi:</strong> {userData?.endDate}</p>
+                                        <p><strong>Malaka oshirishni boshlagan:</strong> {userData?.startDate}</p>
+                                        <p><strong>Malaka oshirish tugagan:</strong> {userData?.endDate}</p>
                                     </div>
                                 </div>
                             </div>
