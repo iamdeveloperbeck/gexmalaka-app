@@ -20,13 +20,11 @@ const UserDashboard = () => {
                 const docSnap = await getDoc(docRef);
 
                 if (docSnap.exists()) {
-                    console.log("Foydalanuvchi ma'lumotlari:", docSnap.data());
                     setUserData(docSnap.data());
                 } else {
                     console.log('Foydalanuvchi hujjati topilmadi!');
                 }
             } else {
-                console.log('Foydalanuvchi tizimga kirmagan, login sahifasiga yo‘naltirilmoqda');
                 navigate('/login');
             }
             setLoading(false);
